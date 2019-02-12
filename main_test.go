@@ -4,6 +4,7 @@ import "testing"
 
 var Result int
 
+/* Iterative */
 func BenchmarkIterative_10(b *testing.B) {
 	for n := 0; n < b.N; n++ {
 		Result = Iterative(10)
@@ -40,7 +41,7 @@ func BenchmarkIterative_1000000(b *testing.B) {
 	}
 }
 
-////////////////////////////
+/* Recursive */
 
 func BenchmarkRecursive_10(b *testing.B) {
 	for n := 0; n < b.N; n++ {
@@ -78,7 +79,7 @@ func BenchmarkRecursive_1000000(b *testing.B) {
 	}
 }
 
-//////////////////////////////////
+/* Tail Recursive */
 func BenchmarkTailRecursive_10(b *testing.B) {
 	for n := 0; n < b.N; n++ {
 		Result = TailRecursive(10, 0)
